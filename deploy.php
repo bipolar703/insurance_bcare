@@ -14,6 +14,7 @@ $config = [
         '.git',
         '.env',
         '.env.example',
+        '.env.hostinger',
         '.env.production',
         'node_modules',
         'storage/framework/cache/*',
@@ -29,7 +30,22 @@ $config = [
         'deploy.ps1',
         'docker-compose.yml',
         'Dockerfile',
-        'phpunit.xml'
+        'phpunit.xml',
+        'composer.lock',
+        '.git*',
+        '.env*',
+        'storage/*.key',
+        'vendor',
+        '.idea',
+        '.vscode',
+        'build',
+        'dist'
+    ],
+    'critical_directories' => [
+        'storage/app',
+        'storage/framework',
+        'storage/logs',
+        'bootstrap/cache'
     ]
 ];
 
