@@ -1,0 +1,82 @@
+//colors variavels 
+
+@use './config' as *;
+$white-color : #f7f7f7;
+
+
+$text-black : #222121;
+
+$primary-color : #bc964f;
+
+$orang-red: #fb4b4e;
+
+$white-primary: #ffff;
+
+
+
+
+
+
+$poppinsReg:  'Poppins', sans-serif;;
+
+$background-image-path: "../img/images/line.png";
+
+
+
+//fonts 
+/*-------------------------------- Fonts --------------------------------*/
+
+
+
+
+// @font-face {
+//     font-family: "Saudi Regular";
+//     src: url("../fonts/ArbFONTS-HacenSaudiArabia.woff") format("woff");
+//     font-weight: 300;
+//     font-style: normal;
+//     font-display: swap;
+//   }
+  
+
+  @font-face {
+    font-family: "Ge ss";
+    src: url("../fonts/GE_SS_Two.woff") format("woff");
+    font-weight: 300;
+    font-style: bold;
+    font-display: swap;
+  }
+  
+
+  @font-face {
+    font-family: "Saudi 2";
+    src: url("../fonts/ArbFONTS-HacenSaudiArabia.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+
+
+
+
+
+
+  @font-face {
+    font-family: "Saudi Regular";
+    src: url("../fonts/Saudi_Arabia.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+
+//  break point variabels 
+
+
+
+
+
+
+
+
+

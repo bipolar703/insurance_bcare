@@ -1,0 +1,230 @@
+@media (max-width: 767px) {
+    ul.externalLinks{
+        /* flex-wrap: wrap; */
+        gap: 5px;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 40px;
+    }
+    nav#main-nav {
+        display: none !important;
+    }
+    .siteMenu{
+        display: block;
+        width: 100%;
+    }
+    .slider .slideText{
+        right: 5%;
+        max-width: 80%;
+    }
+    .slider,
+    .slider .slick-slide img{
+        height: auto;
+    }
+    .slider .slick-dots{
+        bottom: 25px;
+        padding: 0 5%;
+        width: max-content;
+    }
+    [dir='rtl'] .slider .slick-next {
+        right: auto;
+        left: 10px;
+        bottom: 0;
+        top: auto;
+    }
+    [dir='rtl'] .slider .slick-prev {
+        right: auto;
+        left: 60px;
+        z-index: 9;
+        bottom: 0;
+        top: auto;
+    }
+    .slideText h2{
+        margin-bottom: 15px;
+    }
+    .slideText p{
+        margin-bottom: 0;
+        max-height: 146px;
+        overflow: hidden;
+    }
+    .slideText a{
+        margin-top: 15px;
+        font-size: 14px;
+    }
+    .formTabs .tabs{
+        padding: 20px;
+        margin: 30px 0;
+
+    }
+    .formTabs .tabs .tab-links{
+        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .formTabs .tabs .tab-links a{
+        width: 100%;
+        height: 90px;
+        font-size: 12px;
+    }
+    .formTabs .tabs .tab-links a img{
+        max-width: 30px;
+    }
+    .formTabs .tabs .tab-links a .image{
+        width: 50px;
+        height: 50px;
+    }
+    [dir='rtl'] .partners .slick-next {
+        right: auto;
+        left: 25px;
+        top: auto;
+        bottom: -100px;
+        z-index: 99;
+    }
+    [dir='rtl'] .partners .slick-prev {
+        right: 25px;
+        bottom: -100px;
+        top: auto;
+        z-index: 99;
+    }
+    .partners .slick-dots{
+        z-index: 1;
+    }
+    ul.footerMenu {
+        flex-wrap: wrap;
+    }
+    section{
+        padding: 30px 0 !important;
+    }
+    .row.mt-5.itemList {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+    .itemList .col-md-6.col-lg-4.mb-4 {
+        padding: 5px;
+        margin-bottom: 0px !important;
+    }
+    .itemList .item img {
+        max-width: 75px;
+    }
+    .itemList .item {
+        min-height: 195px;
+        font-size: 14px;
+    }
+    .sectionPadding {
+        padding: 30px 0 80px 0 !important;
+    }
+    footer.siteFooter .col-md-6.text-left.mb-3 img{
+        max-width: 180px;
+    }
+    footer.siteFooter .col-md-6.text-left.mb-3 {
+        display: flex;
+        flex-direction: column;
+        text-align: right !important;
+        margin-top: 20px;
+        gap: 15px;
+    }
+    .slider{
+        padding: 0 !important;
+    }
+    ul.tab-links-nested-child a, ul.tab-links-nested a{
+        font-size: 11px;
+    }
+    .form h2 {
+        font-size: 18px;
+        margin-top: 15px;
+    }
+    .heading h2{
+        font-size: 22px;
+    }
+    .siteHeader a.nav-link::before{
+        left: calc(98% - 35px);
+    }
+    .navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon{
+        background-image: url("../img/icon/menuClose.png");
+        background-size: 25px;
+    }
+    .partners .slick-slide img {
+        max-width: 90px;
+    }
+    .insuranceType.formTabs .tabs .tab-links a{
+        width: 100%;
+        font-size: 14px;
+    }
+    .insuranceTypeItem{
+        padding: 20px 10px;
+    }
+    .insuranceTypeItem form.insuranceTypeForm{
+        height: auto;
+    }
+    .insuranceTypeItem .formFooter::before{
+        display: none;
+    }
+    .insuranceTypeItem .bodyTop h4,
+    .insuranceTypeItem .formFooter a,
+    .insuranceTypeItem button.insuranceTypeFormSubmit{
+        font-size: 14px;
+    }
+    .insuranceTypeItem button.insuranceTypeFormSubmit span{
+        padding: 10px;
+    }
+    .insuranceTypeItem .top .title::before{
+        height: 70px;
+    }
+    .checkbox {
+        display: flex;
+        align-items: baseline;
+        gap: 5px;
+    }
+    .paymentForm .paymentContainer{
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    .paymentCard{
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    .paymentCard .cardInfo{
+        padding: 20px 10px;
+    }
+    .paymentCard .inputGroup {
+        margin-bottom: 15px;
+    }
+    .paymentCard .cardInfo h2{
+        font-size: 16px;
+    }
+    #overlay .spinnerContainer img{
+        max-width: 90px;
+    }
+    section.formTabs.insuranceType .col-md-6.mb-3{
+        max-width: 100% !important;
+        padding: 20px 10px;
+        margin: 0.5rem 0;
+    }
+    
+    .c-navbar {
+        padding: 15px 0;
+        background: #fff !important;
+        border-radius: 0 0 5px 5px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .c-navbar img.u-ml-auto {
+        margin-right: auto;
+        margin-left: 10px;
+    }
+    .card-body .containerForm{
+        padding: 10px;
+    }
+    ul.externalLinks a{
+        font-size: 11px;
+    }
+    .desktopImage{
+        display: none;
+    }
+    .mobileImg{
+        display: block;
+        max-width: 35px;
+        margin-left: 20px !important;
+    }
+}

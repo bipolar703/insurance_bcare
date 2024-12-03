@@ -1,0 +1,300 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100;300;500;600&display=swap");
+
+[dir="rtl"] body {
+    direction: rtl;
+    font-family: "Noto Kufi Arabic", sans-serif;
+}
+
+[dir="rtl"] body p {
+    font-family: "Noto Kufi Arabic", sans-serif;
+    font-weight: 300;
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] body a,
+[dir="rtl"] body h1,
+[dir="rtl"] body h2,
+[dir="rtl"] body h3,
+[dir="rtl"] body h4,
+[dir="rtl"] body h5,
+[dir="rtl"] body h6 {
+    font-family: "Noto Kufi Arabic", sans-serif;
+}
+
+
+
+[dir="rtl"] .header_title {
+
+
+    direction: rtl;
+}
+
+[dir="rtl"] .header_text_con {
+    direction: rtl;
+    text-align: justify;
+}
+
+[dir="rtl"] .ulSlider,
+.slick-track {
+
+    direction: ltr;
+
+}
+
+[dir='rtl'] .slick-next {
+    left: 0;
+}
+
+[dir='rtl'] .slick-prev {
+    left: 48%;
+    right: auto;
+
+}
+
+[dir='rtl'] .slick-next {
+    right: 45%;
+    left: auto;
+}
+
+[dir='rtl'] .slick-slider {
+    direction: ltr;
+}
+
+[dir='rtl'] .navbar-collapse {
+    margin-left: 6rem;
+
+}
+
+
+
+[dir='rtl'] .about_us_title h1 {
+    direction: rtl;
+    text-align: right;
+
+    right: 110px;
+}
+
+[dir="rtl"] .about_us_text_con p {
+    right: 170px;
+}
+
+[dir="rtl"] .about_us_text_con a {
+    direction: rtl;
+
+    right: -10px;
+}
+
+[dir="rtl"] .about_us_text_con a::after {
+
+    left: -51px;
+
+}
+
+[dir="rtl"] .our_project_slider_title {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .why_choose_us_title,
+[dir="rtl"] .why_chooseus_number_desc,
+[dir="rtl"] .question_text_con h1,
+[dir="rtl"] .footer_list_title {
+    text-align: right;
+}
+
+[dir="rtl"].footer_list_text_el,
+[dir="rtl"] .copy_right_text h3 {
+    text-align: right;
+    direction: rtl;
+    justify-content: flex-end;
+
+
+}
+
+
+[dir="rtl"] .footer_list_text_el a {
+    direction: rtl;
+}
+
+[dir="rtl"] .footer_list_text_el {
+    gap: .8rem !important;
+}
+
+[dir="rtl"] .list-unstyled {
+
+
+    gap: .5rem;
+    text-align: right;
+    direction: rtl;
+}
+
+[dir="rtl"] h3.why_choose_us_title {
+
+    padding: 2rem;
+}
+
+[dir="rtl"] .why_choose_us_list {
+    gap: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+[dir="rtl"] .contact_us {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .breadCrumb {
+    direction: rtl;
+    padding-right: 7rem;
+
+    text-align: right;
+}
+
+[dir="rtl"] .breadCrumb_1 h1 {
+
+    text-align: right;
+}
+
+[dir="rtl"] .contact_us_icon {
+    margin-left: .5rem;
+}
+
+[dir="rtl"] .news_cards .card h5 {
+    text-align: right;
+}
+
+[dir="rtl"] .products_services_sub_title {
+    text-align: right;
+}
+
+[dir="rtl"] .products_services_cards .card_text {
+    text-align: right;
+}
+
+
+
+
+[dir="rtl"] .commercial_cards .card,
+[dir="rtl"] .individual_cards .card {
+    text-align: right;
+}
+
+[dir="rtl"] .aboutus_section {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .aboutus_section .aboutUs_img_con img {
+    margin-right: 75px;
+}
+
+[dir="rtl"] .why_decor .why_card .text_con {
+    text-align: right;
+    direction: rtl;
+}
+
+
+[dir="rtl"] .products_services_cards .card_text a {
+    width: 100%;
+    text-align: left;
+
+}
+
+[dir="rtl"] svg.svg-inline--fa.fa-arrow-right-long {
+    transform: scaleX(-1);
+}
+
+[dir="rtl"] .link_icon a {
+    transform: scaleX(-1);
+}
+
+@media (min-width: 1400px) and (max-width: 1600px) {
+    [dir="rtl"] .breadCrumb {
+        padding-right: 9rem;
+    }
+
+}
+
+[dir="rtl"] .callProces .card-header button {
+  text-align: right;
+}
+
+[dir="rtl"] .callProces .inputGroup label {
+  text-align: right;
+}
+
+[dir="rtl"] .callProces .externalLinks {
+  text-align: right;
+}
+
+[dir="rtl"] .callProces .externalLinks a i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .callProces .submit i {
+  margin-left: 0.5rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .callProces .containerForm {
+  direction: rtl;
+}
+
+[dir="rtl"] .callProces .card-body {
+  direction: rtl;
+}
+
+[dir="rtl"] .interHeading {
+  direction: rtl;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .callProces .containerForm {
+    flex-direction: column-reverse;
+  }
+}
+
+[dir="rtl"] .c-navbar__nav {
+  padding-right: 0;
+}
+
+[dir="rtl"] .c-navbar__brand {
+  margin-right: 15px;
+}
+
+[dir="rtl"] .c-navbar__nav-link {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .c-navbar__nav-item {
+    text-align: right;
+    padding-right: 15px;
+  }
+
+  [dir="rtl"] .callProces .externalLinks {
+    text-align: right;
+  }
+
+  [dir="rtl"] .callProces .submit {
+    justify-content: center;
+  }
+
+  [dir="rtl"] .callProces .card-header button {
+    text-align: right;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  [dir="rtl"] .interHeading {
+    padding: 0 15px;
+  }
+
+  [dir="rtl"] .callProces .inputGroup {
+    text-align: right;
+  }
+}

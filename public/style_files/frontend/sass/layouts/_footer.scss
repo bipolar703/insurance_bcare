@@ -1,0 +1,199 @@
+@use '../abstracts/mixin' as *;
+@use '../abstracts/variabels' as *;
+
+
+
+
+
+
+
+footer {
+    overflow: hidden;
+    background-color: #fff;
+    padding: 0rem 8rem;
+
+    padding-right: 4rem;
+    height: 140px;
+
+
+    height: 150px;
+
+    border-top: 1px solid rgba(195, 193, 193, 0.44);
+    @include flex(column);
+
+    position: relative;
+
+    gap: 1.5rem;
+
+    @include breakPoint(600px) {
+        height: fit-content;
+        padding: 0rem 0rem;
+
+        gap: 0rem;
+        line-height: none;
+
+    }
+
+    .footer_con {
+        @include flex(row);
+        justify-content: space-between !important;
+
+        align-items: flex-start;
+        width: 100%;
+
+
+        @include breakPoint(600px) {
+            flex-direction: column;
+            width: 100%;
+            padding: 1rem;
+            padding-top: 2rem;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        ul {
+
+            @include flex(row);
+
+            gap: 2.5rem;
+
+            @include breakPoint(600px) {
+
+                flex-direction: column;
+                padding: 0;
+                gap: 1rem;
+            }
+
+            li a {
+
+                color: #000000;
+
+                font-family: 'Saudi Regular';
+
+                font-size: 18px;
+                text-decoration: none;
+
+                font-weight: 500;
+
+                &:hover {
+                    text-decoration: none;
+                }
+
+            }
+
+        }
+
+        .social {
+
+            @include flex(row);
+            gap: .5rem;
+
+            img {
+                width: 30px;
+                height: auto;
+            }
+        }
+    }
+
+
+    .copy_right {
+        @include flex(row);
+        justify-content: flex-end;
+        width: 100%;
+        align-items: flex-start;
+
+        position: relative;
+        position: absolute;
+        bottom: 0;
+
+        margin-top: 1rem;
+
+
+        @include breakPoint(600px) {
+            // padding-bottom: 1rem;
+            height: 45px;
+            // background-color: #000000;
+       
+
+            position: static;
+        }
+
+        &::before {
+
+            content: " ";
+            background-image: url(../img/RecBlack.png);
+            background-size: cover;
+            position: absolute;
+            bottom: 0px;
+
+            left: -500px;
+            width: 74%;
+            height: 32px;
+            z-index: 1;
+
+            @include customRange(1400px, 1600px) {
+                left: -530px;
+                width: 75%;
+                height: 35px;
+
+            }
+            @include breakPoint(746px) {
+
+        display: none
+
+            }
+         
+        }
+
+        @include breakPoint(746px) {
+            @include flex(column);
+            gap: 1rem;
+        }
+
+        &_text {
+            z-index: 30;
+
+            @include breakPoint(746px) {
+            height: 100%;
+            background-color: #000000;
+            width: 100%;
+            @include flex(row);
+            }
+
+        }
+
+
+        &_text a {
+
+            color: #ffff !important;
+
+            z-index: 20;
+            text-decoration: none;
+            position: absolute;
+            bottom: 9px;
+            left: 90px;
+            @include breakPoint(746px) {
+                position: static;
+                width: 100%;
+                text-align: center;
+                
+            }
+        }
+
+        &_text h3 {
+
+
+
+            font-family: 'Saudi Regular';
+
+            font-size: 12px;
+
+            font-weight: 500;
+
+            // @include breakPoint (746px) {
+            //     font-size: 12px
+            // }
+        }
+    }
+
+}

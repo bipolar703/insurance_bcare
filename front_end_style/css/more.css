@@ -1,0 +1,111 @@
+
+/*************************brands***************************/
+.c_explroe::after{
+    content: url('../images/arrowbrnadex.png');
+    position: absolute;
+    right: -20px;
+    top: 6px;
+}
+
+
+/*************************inners***************************/
+
+.c_payment_method_page .c_itme a.closed.collapsed{
+    background: url('../images/plus.png') no-repeat right;
+    background-position-x: 99%;
+    color: #424242;
+}
+
+.c_payment_method_page .c_itme a.closed{
+    background: url('../images/minus.png') no-repeat right;
+    background-position-x: 99%;
+}
+
+
+
+/*
+https://www.thesoftwareguy.in/creating-responsive-multi-step-form-bootstrap-jquery/
+*/
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+    margin-bottom: 75px;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: auto;
+    bottom: 16px;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 2px;
+    background-color: #cecece;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+    width: 25%;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+/**/
+.btn-circle {
+    color: #fff;
+    cursor: none !important;
+    outline-style: solid;
+    outline-color: #fff;
+}
+
+.step_active a {
+    background: #000;
+}
+
+.step_displed a {
+    /* opacity: .5; */
+    background: #9c9e9f;
+}
+
+.step_active p{
+    font-weight: bold;
+}
+
+.stepwizard-step{
+    font-size: 13px;
+    text-transform: uppercase;
+}
+
+.btn-circle:hover {
+    color: #fff;
+}
+
+
+
+/* Your CSS file or within a <style> tag */
+.gold-background {
+    background-color: #ffd700 !important; /* Gold color */
+    color: black !important; /* Text color */
+    border-color: #ffd700 !important; /* Border color */
+}

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import frontend styles */
+@import '../../style_files/frontend/css/style.css';
+@import '../../style_files/frontend/css/responsive.css';
+@import '../../style_files/frontend/css/normalize.css';
+@import '../../style_files/frontend/css/lightSlider.min.css';
+@import '../../style_files/frontend/css/slick.css';
+@import '../../style_files/frontend/css/slick-theme.css';

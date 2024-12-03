@@ -1,25 +1,52 @@
-name: Hostinger Deploy
-
+name: Deploy to Hostinger
 on:
   push:
     branches:
       - main
 
 jobs:
-  deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v3
 
-    - name: Hostinger Deploy
-      uses: mradilla/hostinger-deploy@v1
-      with:
-        # Replace these values with your actual details
-        source-path: ./build  # e.g., ./dist or ./build
-        domain: https://taminattcom.pro/ # Your domain
-        host: 145.223.85.200  # Your Hostinger VPS IP address
-        port: 22  # Default SSH port
-        username: u116650566  # Your SSH username
-        password: Reeree12.R.  # Your SSH password
+      - name: 📂 Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+          extensions: mbstring, xml, ctype, iconv, intl, pdo_mysql, bcmath, json
+
+      - name: 📦 Cache Composer packages
+        id: composer-cache
+        uses: actions/cache@v3
+        with:
+          path: vendor
+          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-
+
+      - name: 🔨 Install Dependencies
+        run: composer install --no-dev --optimize-autoloader --no-interaction
+
+      - name: 📝 Generate app key
+        run: |
+          cp .env.example .env
+          php artisan key:generate --force
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            .env
+            .env.example
+            .env.backup

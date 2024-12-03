@@ -1,0 +1,3594 @@
+@use './abstracts/' as *;
+@use './components/btns' as *;
+@import url('https://fonts.googleapis.com/css2?family=Birthstone&family=IBM+Plex+Sans+Arabic:wght@300;500&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800&display=swap');
+
+body {
+  background-color: #ffff;
+  font-family: 'Saudi Regular';
+  overflow-x: hidden;
+
+
+}
+
+
+
+
+
+/************************* home page  *************************/
+/*main slider */
+
+.main_slider {
+
+  direction: ltr !important;
+  z-index: 1;
+  // height: 850px;
+
+  width: 94%;
+
+  padding-left: 0;
+  position: relative;
+
+  &::after {
+
+    content: " ";
+    background-image: url("../img/RecBlack.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 60%;
+    height: 24px;
+  }
+
+
+  &::before {
+
+    content: " ";
+    background-image: url("../img/RecGold.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 7.5px;
+    right: 0;
+    width: 40%;
+    height: 24px;
+
+
+
+
+    z-index: 10;
+
+
+
+
+  }
+
+  .slick-slide {
+    position: relative;
+
+
+    /*social media*/
+    .social_media {
+
+
+      position: absolute;
+      bottom: 8rem;
+
+
+      //  cursor: pointer;
+      z-index: 20;
+
+
+
+      left: 2rem;
+
+      @include flex (row);
+      gap: 1rem;
+
+
+      img {
+        width: 35px;
+        height: 35px;
+
+
+      }
+    }
+
+
+    /*social media*/
+
+
+
+    /*slider text */
+    .slider_text {
+
+      position: absolute;
+
+      bottom: 4rem;
+
+      right: 8rem;
+
+
+      text-align: right;
+      z-index: 20;
+
+      @include flex (column);
+      justify-content: flex-start;
+
+      align-items: flex-end;
+
+      gap: 1rem;
+      height: fit-content;
+
+      &::before {
+
+
+        content: " ";
+
+        width: 2px;
+        height: 100%;
+        position: absolute;
+
+        background-color: $white-primary;
+        ;
+        right: -20px;
+
+        border-radius: 4px;
+      }
+
+      &_title {
+
+        color: $white-primary;
+
+        font-size: 23px;
+        font-family: "Ge ss";
+      }
+
+
+      &_desc {
+
+
+        direction: rtl;
+
+        max-width: 550px;
+
+        p {
+          color: $white-primary;
+
+          font-size: 18px;
+          font-family: "Saudi Regular";
+          display: inline;
+          direction: rtl;
+          margin-left: .5rem;
+        }
+
+        .arrow_left {
+          display: inline;
+          color: $primary-color;
+
+          font-size: 18px;
+
+        }
+      }
+
+
+    }
+
+    /*slider text */
+
+  }
+
+
+
+  &_img {
+    position: relative;
+
+
+
+    &::before {
+      content: " ";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      background: #000;
+      pointer-events: none;
+      z-index: 3;
+      height: auto;
+
+      opacity: 0.169;
+
+    }
+
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+
+      background-image: linear-gradient(74deg, #99793a 0%, #99793a 9%, #000000 50%, #5d3e00 99%, #5d3e00 100%);
+      opacity: .7;
+      pointer-events: none;
+      z-index: 4;
+      height: auto;
+      color: white;
+    }
+
+    img {
+      width: 100%;
+    }
+
+  }
+
+  .slick-slider {
+    height: 850px;
+  }
+
+
+
+}
+
+
+/*dots styles */
+
+.custom-dots {
+  // height: 400px;
+  width: 8%;
+  position: absolute;
+  top: 300px;
+  left: -4.5%;
+
+
+  @include customRange(1400px, 1600px) {
+
+    left: -4%;
+  }
+
+  .dot {
+    display: block;
+    width: 15px;
+    height: 15px;
+    // background-color: rgb(255, 127, 127);
+
+    border: 1px solid $primary-color ;
+    margin-bottom: 1rem;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $primary-color;
+    }
+  }
+
+  :nth-child(2) {
+
+    span {
+      // background-color: red;
+      position: relative;
+
+      margin-bottom: 6rem;
+
+
+
+      &::after {
+
+        content: "";
+        height: 70px;
+        width: 3px;
+        position: absolute;
+        background-color: $primary-color;
+        border-radius: 4px;
+        top: 25px;
+        left: 5.2px;
+        display: block;
+      }
+    }
+  }
+
+  /*dots styles */
+
+}
+
+/*main slider */
+
+
+
+
+
+
+
+
+
+
+/* about section */
+
+.vision_mission_section {
+
+  @include flex (row);
+
+  align-items: flex-start;
+
+  width: 100%;
+
+  gap: 4rem;
+
+  padding-top: 2rem;
+
+  margin-bottom: 2rem;
+
+  justify-content: space-between;
+
+
+  @include breakPoint(600px) {
+
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .right {
+
+    @include flex (column);
+
+    gap: 1rem;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+
+
+    max-width: 600px;
+
+    .vision_mission_title {
+
+
+      font-size: 30px;
+
+      font-family: 'Saudi Regular';
+      position: relative;
+
+      &::before {
+
+        content: " ";
+
+        width: 6px;
+        height: 22px;
+
+        background-color: #bf984c;
+        position: absolute;
+
+        right: -13px;
+
+        top: 4px
+      }
+
+
+
+
+
+    }
+
+
+    .vision_mission_desc {
+
+      font-size: 19px;
+
+      font-family: 'Saudi Regular';
+
+      color: #717171;
+
+      margin-right: -0.8rem;
+
+
+    }
+
+
+
+  }
+
+  .left {
+
+    @include grid(2);
+
+
+
+    gap: 2rem;
+
+
+    @include breakPoint(600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .box {
+
+      width: 230px;
+      height: 170px;
+
+      border-radius: 20px;
+      background-color: #c19e4b;
+      @include flex(row);
+
+      flex-direction: column;
+
+      justify-content: flex-start;
+
+      align-items: flex-end;
+      padding: 1rem 2rem;
+      gap: 1.6rem;
+
+
+      &_title {
+        text-align: right;
+
+        width: 100%;
+
+        font-family: 'Saudi Regular';
+
+        color: $white-primary;
+
+        font-weight: 400;
+        font-size: 19px;
+
+        padding-right: 1rem;
+      }
+
+      img {
+
+
+        height: 70px;
+
+
+      }
+    }
+
+  }
+
+
+
+
+
+}
+
+/* about section */
+
+
+
+
+
+
+
+/* online store */
+
+
+.online_store_section {
+
+  padding: 30px 60px;
+  height: fit-content;
+  position: relative;
+
+  width: 100%;
+
+
+
+  @include breakPoint(600px) {
+
+    padding: 10px ;
+  }
+  &::after {
+
+    content: " ";
+    background-image: url("../img/RecGold.png");
+    background-size: cover;
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 40%;
+    height: 24px;
+
+
+
+
+    z-index: 10;
+
+
+
+
+  }
+
+  &::before {
+
+    content: " ";
+    width: 50%;
+    top: 0;
+
+    height: fit-content;
+    height: 100%;
+
+    background-color: #f4f4f4;
+
+    position: absolute;
+    z-index: -1;
+
+    right: 0;
+  }
+
+
+  h4 {
+
+
+    font-size: 30px;
+
+
+    font-family: 'Saudi Regular';
+
+
+    text-align: center;
+    width: 100%;
+
+    color: #000000;
+    margin-top: 3rem
+  }
+
+
+  #myTabs {
+    @include flex(column)
+  }
+
+
+
+
+  .nav-tabs {
+
+
+    @include flex(row);
+
+    margin: 2rem 0rem;
+
+    border: none;
+
+    gap: 2rem;
+
+
+    @include breakPoint(600px) {
+
+
+      gap: 0rem;
+    }
+    .nav-item a {
+
+      border: none;
+
+      background-color: none;
+
+      font-family: 'Tajawal', sans-serif;
+
+      font-weight: 600;
+      color: #000;
+
+      font-size: 20px;
+
+      min-width: 100px;
+      text-align: center;
+
+      &:hover {
+
+        border: none;
+
+        background-color: none;
+
+        color: #bf984c;
+
+        border: 1px solid #bf984c;
+
+        border-radius: 20px;
+
+
+
+      }
+
+    }
+
+    .nav-link.active {
+
+      border: none;
+
+      background-color: transparent !important;
+
+    }
+
+
+
+
+  }
+
+  .tab-content {
+
+    margin-top: 6rem;
+
+
+    @include flex(row);
+
+    // position: relative;
+
+
+
+    img {
+      margin: 0 auto;
+      width: 650px;
+    }
+
+    .cars_slider {
+
+      direction: ltr;
+
+      width: 1200px;
+
+
+      @include breakPoint(600px) {
+
+        width: 300px;
+      }
+
+
+      img {
+        margin: 0 auto;
+        width: 750px;
+
+        @include breakPoint(600px) {
+
+          width: 300px;
+        }
+
+      }
+    }
+
+    .slick-slide {
+      position: relative;
+
+      .text {
+
+        position: absolute;
+        z-index: 30;
+        bottom: 0;
+
+        right: 10px;
+
+
+        height: 300px;
+
+        max-width: 200px;
+
+        @include breakPoint(600px) {
+          height: unset;
+          @include flex(row);
+
+          justify-content: flex-start;
+          top: 0;
+          align-items: flex-start;
+        }
+
+        .title {
+
+          font-size: 20px;
+          font-family: 'Tajawal', sans-serif;
+          font-weight: 500;
+          color: #bf984c;
+
+          text-align: right;
+
+          margin-top: 1.8rem;
+
+          margin-bottom: .5rem;
+
+          
+        @include breakPoint(600px) {
+          margin: 0;
+        }
+        }
+
+        // p {
+        //   text-align: right;
+
+        //   color: #000;
+
+        //   font-family: 'Tajawal', sans-serif;
+
+        //   font-size: 18px;
+        //   font-family: 600 !important;
+        // }
+
+        h5 {
+
+          text-align: right;
+
+          color: #000;
+
+          font-family: 'Tajawal', sans-serif;
+
+          font-size: 20px;
+          font-family: 600 !important;
+
+        }
+      }
+
+    }
+
+
+
+
+  }
+
+
+
+
+  .link {
+
+
+
+    @include flex(row);
+
+    text-decoration: none;
+
+    justify-content: flex-end;
+    position: absolute;
+    left: 10px;
+    bottom: 0px;
+
+    z-index: 400;
+
+    span {
+
+      width: 100px;
+      height: 30px;
+      font-family: 'Saudi Regular';
+      text-align: center;
+
+      font-size: 15px;
+
+      padding: 0.3rem;
+
+      background-color: #bf984c;
+
+      color: #fff !important;
+      margin-left: .3rem;
+
+
+
+      display: block;
+    }
+
+
+    .arrow_left {
+      background-color: #bf984c;
+
+
+      font-size: 18px;
+      color: #fff !important;
+
+      padding: .4rem;
+    }
+  }
+
+
+
+}
+
+
+
+
+
+
+
+
+/* online store */
+
+
+
+
+
+/*our  branch */
+.our_branch {
+
+
+  padding: 50px;
+
+  margin-top: 2rem;
+
+
+
+  &_wrapper {
+
+    @include flex(row);
+
+
+
+    align-items: flex-start;
+
+    padding: 0px 0px;
+
+    gap: 6rem;
+
+    @include breakPoint(600px) {
+
+      flex-direction: column;
+    }
+
+  }
+
+
+  h4 {
+
+
+    font-size: 30px;
+
+
+    font-family: 'Saudi Regular';
+
+
+    text-align: center;
+    width: 100%;
+
+    color: #000000;
+
+    margin-bottom: 1rem;
+  }
+
+  .left {
+
+
+    border-radius: 30px;
+
+
+    width: 500px;
+
+    margin-top: 4rem;
+
+    position: relative;
+
+    @include breakPoint(600px) {
+      width: 100%;
+
+
+    }
+
+    img {
+      width: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      width: 470px;
+      height: 350px;
+
+      @include breakPoint(600px) {
+        width: 100%;
+        height: 193px;
+      }
+    }
+
+
+    &::before {
+      content: " ";
+      background-image: url(../img/mapSection/bg.png);
+      position: absolute;
+      top: -25px;
+      right: -90px;
+      /* right: 112px; */
+      width: 50%;
+      height: 400px;
+      background-size: contain;
+      z-index: -1;
+      background-repeat: no-repeat;
+
+      @include breakPoint(600px) {
+        height: 250px;
+        right: -45px;
+      }
+
+    }
+
+  }
+
+
+
+  .right {
+
+    width: 550px;
+    position: relative;
+
+    @include breakPoint(600px) {
+      width: 100%;
+    }
+
+    img {
+
+
+      width: 100%;
+
+    }
+
+
+    ul {
+      width: 100%;
+
+      border: none;
+
+      li {
+
+        position: absolute;
+
+
+
+        .nav-tabs .nav-link {
+          border: none;
+          border-radius: 0;
+          color: #555;
+          background-color: transparent !important;
+
+
+        }
+
+
+        .nav-tabs .nav-link.active {
+
+          background: transparent !important;
+          border: none;
+        }
+
+        cursor: pointer;
+
+
+        a {
+          color: #e9cf9d !important;
+
+          font-size: 35px;
+
+          background: transparent !important;
+          border: none;
+
+
+          position: relative;
+
+          &:hover {
+
+
+            font-size: 40px;
+
+            color: #bf984c !important;
+
+
+
+          }
+
+        }
+
+        span {
+          background-color: #bf984c;
+
+          color: #ffff;
+
+          opacity: 0;
+
+          font-size: 13px;
+
+          position: absolute;
+
+          top: -10px;
+
+          left: 50px;
+
+
+          font-family: 'Saudi Regular';
+          width: 70px;
+          height: 25px;
+          text-align: center;
+
+          padding-top: .3rem;
+
+        }
+
+        a:hover span {
+          opacity: 1;
+        }
+
+      }
+
+      li:nth-child(1) {
+        top: 100px;
+        left: 340px;
+
+      }
+
+      li:nth-child(2) {
+        top: 45px;
+        left: 145px;
+
+        @include customRange(1400px, 1600px) {
+
+          left: 155px;
+        }
+
+      }
+
+
+      li:nth-child(3) {
+        top: 140px;
+        left: 290px;
+
+
+        @include customRange(1400px, 1600px) {
+          top: 150px;
+        }
+      }
+
+
+      li:nth-child(4) {
+
+        top: 130px;
+        left: 230px;
+      }
+
+
+      li:nth-child(5) {
+
+        top: 160px;
+        left: 190px;
+
+      }
+
+
+      li:nth-child(6) {
+        top: 180px;
+        left: 230px;
+
+        @include customRange(1400px, 1600px) {
+          top: 190px;
+
+        }
+
+
+      }
+
+
+      li:nth-child(7) {
+
+        top: 260px;
+        left: 250px;
+
+      }
+
+
+      li:nth-child(8) {
+
+        top: 370px;
+        left: 110px;
+
+        @include customRange(1400px, 1600px) {
+
+          top: 390px;
+        }
+      }
+
+      li:nth-child(9) {
+
+        top: 160px;
+        left: 120px;
+
+
+        @include customRange(1400px, 1600px) {
+
+          left: 130px;
+        }
+
+      }
+    }
+
+  }
+
+
+
+
+
+}
+
+/*our  branch */
+
+
+
+
+/* our componies */
+
+
+.componies {
+
+  margin-top: 2rem;
+
+
+  width: 100%;
+  background-color: #f5f5f5;
+
+  height: auto;
+
+  padding: 30px 60px;
+
+
+  h4 {
+
+    font-size: 30px;
+    font-family: 'Saudi Regular';
+    text-align: center;
+    width: 100%;
+
+    color: #000000;
+    margin-bottom: 1rem;
+
+
+
+
+
+
+
+
+  }
+
+  .componies_wrapper {
+    // @include grid(4);
+
+    direction: ltr;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
+
+
+    a {
+      height: 100%;
+      width: 100%;
+    }
+
+    .box {
+
+
+      position: relative;
+
+
+
+      border-bottom: 250px solid #ffff;
+      border-left: 35px solid transparent;
+      border-right: 0px solid transparent;
+
+      width: 310px;
+
+      height: 250px;
+
+      cursor: pointer;
+
+
+      .text {
+        @include flex(column);
+        opacity: 0;
+
+      }
+
+      h4 {
+        font-size: 15px;
+        max-width: 150px;
+
+        text-align: center;
+
+
+      }
+
+      .desc {
+
+        font-size: 13px;
+        color: #ffffff;
+
+        text-align: right;
+      }
+
+      @include customRange(1400px, 1600px) {
+
+        width: 350px;
+      }
+
+
+
+      img {
+
+
+        width: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 20;
+      }
+    }
+
+
+
+    .left {
+      border-bottom: 250px solid #ffff;
+      border-left: 60px solid transparent;
+      border-right: 0px solid transparent;
+      margin-left: -2rem;
+
+      a {
+
+        text-decoration: none;
+      }
+
+
+      &:hover {
+
+
+        border-bottom: 250px solid #bf984c;
+
+        img {
+          width: 150px;
+          /* Adjust the width to the desired smaller size */
+          height: 45px;
+          transform: translate(-60%, 96%);
+          /* Adjust the height proportionally */
+        }
+
+        .text {
+          opacity: 1;
+          margin-top: 5.5rem;
+          padding: 1rem .5rem;
+
+          padding-right: 4rem;
+
+
+          width: 300px;
+
+
+        }
+
+        h4 {
+          text-align: center;
+          margin-left: 1rem;
+        }
+      }
+
+      @include customRange(1400px, 1600px) {
+        margin-left: -1.8rem;
+
+      }
+
+
+      img {
+        width: 200px;
+        // height: 200px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-60%, 150%);
+        z-index: 20;
+      }
+
+    }
+
+    .right {
+
+      border-bottom: 0px solid #ffff;
+      border-top: 250px solid #ffff;
+      border-left: 0px solid transparent;
+      border-right: 60px solid transparent;
+      margin-right: -2rem;
+      position: relative;
+
+      margin-right: -2rem;
+
+
+      a {
+
+        text-decoration: none;
+      }
+
+      .text {
+
+        position: absolute;
+
+        top: -130px;
+        opacity: 0;
+
+
+
+      }
+
+      &:hover {
+        border-bottom: 0px solid #ffff;
+
+        border-top: 250px solid #bf984c;
+
+
+
+        img {
+          width: 150px;
+          /* Adjust the width to the desired smaller size */
+          height: 45px;
+          /* Adjust the height proportionally */
+
+          transform: translate(-40%, -480%);
+        }
+
+
+        h4 {
+
+          margin-left: 1rem;
+        }
+
+        .text {
+
+          position: absolute;
+          opacity: 1;
+
+          margin-top: -2rem;
+          padding: .5rem;
+        }
+      }
+
+
+      @include customRange(1400px, 1600px) {
+        margin-right: -2rem;
+
+      }
+
+
+      img {
+        width: 200px;
+        height: 60px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-45%, -255%);
+        z-index: 20;
+      }
+    }
+
+
+
+    .custom-dots {
+
+
+
+      width: 100%;
+      position: absolute;
+      top: 76px;
+      @include flex(row);
+      align-items: flex-end;
+      left: 0;
+      gap: 5rem;
+      bottom: 0px;
+
+      top: 280px;
+      height: fit-content;
+      z-index: 0;
+
+      .dot {
+        margin: 0;
+      }
+    }
+
+    .custom-dots :nth-child(2) span {
+      margin-bottom: 0;
+
+      &::after {
+
+        content: "";
+        height: 3px;
+        width: 69px;
+        position: absolute;
+        background-color: #bc964f;
+        border-radius: 4px;
+        top: 5px;
+        display: block;
+        left: -75px;
+      }
+    }
+
+
+  }
+}
+
+
+
+
+
+/*our componies*/
+
+
+
+
+
+/*news*/
+
+
+
+.news {
+
+  width: 100%;
+  background-image: url(../img/news/bg.png);
+  height: 646px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  &::after {
+
+    content: " ";
+    width: 100%;
+    height: 646px;
+
+    opacity: 0.769;
+    width: 100%;
+    height: 646px;
+    background-image: linear-gradient(74deg, #c1994a 0%, #c1994a 9%, #282010 50%, #855d10 99%, #855d10 100%);
+
+
+
+    position: absolute;
+    top: 0;
+  }
+
+  h4 {
+    overflow: hidden;
+    font-size: 30px;
+    font-family: 'Saudi Regular';
+    text-align: center;
+    width: 100%;
+    color: #ffff;
+    margin-bottom: 1rem;
+
+    padding-top: 2rem;
+    position: absolute;
+    z-index: 22;
+
+
+
+
+  }
+
+
+  .card_con {
+
+    @include flex(row);
+    gap: 1rem;
+
+
+    position: absolute;
+
+    z-index: 22;
+
+    width: 100%;
+
+    height: 100%;
+
+    @include breakPoint(600px) {
+
+      @include flex(column);
+    }
+
+    .card {
+
+
+      width: 300px;
+      height: 375px;
+      border-radius: 20px;
+      background-color: #ffff;
+
+      padding: 1rem;
+      padding-top: 2rem;
+      cursor: pointer;
+
+      &:nth-child(1) {
+
+        position: relative;
+
+
+
+        .icon {
+          position: absolute;
+          top: -16px;
+
+          width: 40px;
+          height: 40px;
+          left: 10px;
+        }
+
+      }
+
+
+      &:nth-child(2) {
+
+        position: relative;
+
+        .icon {
+          position: absolute;
+          top: -16px;
+
+          width: 40px;
+          height: 40px;
+          left: 10px;
+        }
+
+      }
+
+
+      &:nth-child(3) {
+
+        position: relative;
+
+
+        .icon {
+          position: absolute;
+          top: -16px;
+
+          width: 40px;
+          height: 40px;
+          left: 10px;
+        }
+
+      }
+
+      &:nth-child(4) {
+
+        position: relative;
+
+
+        .icon {
+          position: absolute;
+          top: -16px;
+
+          width: 40px;
+          height: 40px;
+          left: 10px;
+        }
+
+      }
+
+      img {
+
+
+        width: 100%;
+        height: 100%;
+        // padding: 2rem 1rem;
+      }
+
+
+
+
+    }
+
+
+  }
+
+
+
+
+}
+
+
+
+
+
+
+/*news */
+
+
+
+
+/************************* home page  *************************/
+
+
+
+
+/*************************inner header ***************************/
+
+
+.inner_wrapper {
+
+  height: 250px;
+
+  width: 94%;
+  margin-bottom: 5rem;
+
+  @include breakPoint(600px) {
+
+    height: 80px;
+
+    width: 80%;
+  }
+
+  .inner_img {
+
+    height: 100%;
+    position: relative;
+
+    &::after {
+
+      content: " ";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background-image: linear-gradient(74deg, #99793a 0%, #99793a 9%, #000000 50%, #5d3e00 99%, #5d3e00 100%);
+      opacity: 0.671;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+
+      object-fit: cover;
+
+      object-position: 50% 9%;
+    }
+  }
+}
+
+
+/*****  breadCrumb ******/
+
+
+.breadCrumb {
+
+  padding: 30px 100px;
+  color: #000 !important;
+
+  background-color: transparent;
+
+  @include breakPoint(600px) {
+
+    padding: 30px 30px;
+  }
+
+
+  a {
+
+    font-family: "Saudi Regular";
+
+    font-size: 16px;
+
+    color: #000 !important;
+
+    font-weight: 500;
+
+    text-decoration: none;
+  }
+
+  span {
+    font-family: "Saudi Regular";
+
+    font-size: 16px;
+    color: #bc964f;
+
+
+  }
+}
+
+
+
+
+/****breadCrumb  ****/
+
+/*************************inner header ***************************/
+
+
+/********************** about us ***************************/
+
+
+
+
+
+.about_us {
+
+  @include breakPoint(600px) {
+    width: 100%;
+    padding: 30px;
+  }
+
+
+  .title {
+    font-size: 30px;
+    font-family: "Saudi Regular";
+    position: relative;
+
+    text-align: center;
+
+    &::before {
+      content: " ";
+      width: 6px;
+      height: 22px;
+      background-color: #bf984c;
+      position: absolute;
+      right: -10px;
+      top: 4px;
+
+      font-weight: 600;
+    }
+
+
+  }
+
+  .text_con {
+
+    @include flex(column);
+    gap: 2rem;
+
+
+    p {
+
+      font-size: 19px;
+      font-family: "Saudi Regular";
+
+      max-width: 85%;
+      color: #807f7f;
+
+      text-align: center;
+
+      line-height: 2.4rem;
+
+
+
+
+    }
+
+  }
+
+
+
+  .text_img {
+
+
+    @include flex(row);
+
+    @include breakPoint(600px) {
+      flex-direction: column;
+    }
+
+    gap: 3rem;
+
+    width: 100%;
+    justify-content: flex-start;
+
+    margin-top: 2rem;
+
+
+    .right {
+
+      img {
+
+        width: 629px;
+        height: 306px;
+
+        object-fit: cover;
+
+        @include breakPoint(600px) {
+
+          width: 100%;
+          height: auto;
+        }
+      }
+
+    }
+
+    .left {
+
+      @include flex (column);
+
+      gap: 1rem;
+
+      justify-content: flex-start;
+      align-items: flex-start;
+
+
+      max-width: 600px;
+
+
+
+      .vision_mission_title {
+
+
+        font-size: 30px;
+
+        font-family: 'Saudi Regular';
+        position: relative;
+
+        &::before {
+
+          content: " ";
+
+          width: 6px;
+          height: 22px;
+
+          background-color: #bf984c;
+          position: absolute;
+
+          right: -13px;
+
+          top: 4px
+        }
+
+
+
+
+
+      }
+
+
+      .vision_mission_desc {
+
+        font-size: 17px;
+
+        font-family: 'Saudi Regular';
+
+        color: #717171;
+
+        margin-right: -0.8rem;
+
+
+      }
+
+
+
+    }
+  }
+
+  .our_values {
+
+
+
+    padding: 30px 100px;
+
+    @include breakPoint(600px) {
+      padding: 0;
+
+
+    }
+
+    .title {
+
+      text-align: right;
+
+      margin-bottom: 2rem
+    }
+
+    .cards_wrapper {
+
+
+      @include grid(5);
+
+
+      @include breakPoint(600px) {
+
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1rem;
+
+        margin-bottom: 1rem;
+      }
+    }
+
+
+
+    .box {
+
+      width: 220px;
+      height: 165px;
+
+      border-radius: 20px;
+      background-color: #c19e4b;
+      @include flex(row);
+
+      flex-direction: column;
+
+      justify-content: flex-start;
+
+      align-items: flex-end;
+      padding: 1rem 2rem;
+      gap: 1.6rem;
+
+
+      &_title {
+        text-align: right;
+
+        width: 100%;
+
+        font-family: 'Saudi Regular';
+
+        color: $white-primary;
+
+        font-weight: 400;
+        font-size: 18px;
+
+        padding-right: 1rem;
+      }
+
+      img {
+
+
+        height: 70px;
+
+
+      }
+    }
+  }
+
+  .service {
+
+    padding: 30px 100px;
+
+    @include breakPoint(600px) {
+      padding: 0;
+
+
+    }
+
+    .title {
+
+
+      text-align: right;
+    }
+
+    ul {
+
+      // list-style: disc;
+
+      padding: 0rem 1rem;
+
+      margin-top: 1rem;
+
+
+      li {
+        margin-bottom: .5rem;
+        position: relative;
+      }
+
+      li:before {
+        content: '\2022';
+
+
+        color: #cba56e;
+        font-size: 2.5em;
+        margin-right: 0.5em;
+        position: absolute;
+        right: -3rem;
+        top: -1.3rem;
+      }
+
+      li h5 {
+        font-family: 'Saudi Regular';
+        font-size: 16px;
+        color: #717171;
+
+        max-width: 750px;
+        margin-bottom: .5rem;
+      }
+
+
+
+    }
+  }
+
+}
+
+
+/********************** about us ***************************/
+
+
+
+
+/************************select styels****************************/
+.select {
+  position: relative;
+  // margin-bottom: 15px;
+  width: 260px;
+  // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+  // padding: 1rem;
+
+  border: 0.6859999999999999px solid #c3c3c3;
+
+
+}
+
+.select .selectBtn {
+  background: var(--bg1);
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background: #fff;
+}
+
+.select .selectBtn:after {
+  content: "";
+  position: absolute;
+  top: 45%;
+  left: 15px;
+  width: 6px;
+  height: 6px;
+  -webkit-transform: translateY(-50%) rotate(45deg);
+  transform: translateY(-50%) rotate(45deg);
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transition: 0.2s ease;
+}
+
+.select .selectBtn.toggle {
+  border-radius: 3px 3px 0 0;
+}
+
+.select .selectBtn.toggle:after {
+  -webkit-transform: translateY(-50%) rotate(-135deg);
+  transform: translateY(-50%) rotate(-135deg);
+}
+
+.select .selectDropdown {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  border-radius: 0 0 3px 3px;
+  overflow: hidden;
+  background: var(--bg1);
+  border-top: 1px solid #eee;
+  z-index: 1;
+  background: #fff;
+  -webkit-transform: scale(1, 0);
+  transform: scale(1, 0);
+  -webkit-transform-origin: top center;
+  transform-origin: top center;
+  visibility: hidden;
+  transition: 0.2s ease;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.select .selectDropdown .option {
+  padding: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.select .selectDropdown .option:hover {
+  background: #f8f8f8;
+}
+
+.select .selectDropdown.toggle {
+  visibility: visible;
+  -webkit-transform: scale(1, 1);
+  transform: scale(1, 1);
+}
+
+
+
+/************************select styels****************************/
+
+
+
+
+
+
+
+
+/********************* finance calc  page *******************/
+
+
+.finance_Calc {
+
+  // padding: 0px 100px 0px 0px;
+
+
+  padding-right: 80px;
+  .form_wrapper {
+    padding: 30px 80px 0px 0px;
+
+    width: 90%;
+
+
+    @include breakPoint(600px) {
+
+
+      padding: 0px 30px 0px 0px;
+    }
+  }
+
+
+  // max-width: 95%;
+
+
+
+  label {
+
+    font-family: 'Saudi Regular';
+    font-size: 19px;
+    color: #000000;
+
+  font-weight: 500;  
+  }
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .form-control {
+
+    width: 260px;
+    // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+
+    // padding: 1rem;
+
+    border: 0.6859999999999999px solid #c3c3c3;
+
+
+    border-radius: 0 !important;
+
+    // padding: 1.375rem 0.75rem !important;
+    width: 100%;
+    height: 50px;
+    text-align:right;
+
+    // font-family: 'Saudi Regular';
+  }
+
+  .select {
+    width: 100%;
+  }
+
+  .range {
+
+
+    width: 100%;
+
+  }
+
+  #years {
+    display: none;
+  }
+
+  span {
+    font-size: 15px;
+    color: #cba56e;
+
+    font-family: 'Saudi Regular';
+
+  }
+
+  .price_con {
+    border: none;
+    color: #ffff;
+
+    font-size: 15px;
+
+
+    font-family: 'Saudi Regular';
+
+    padding: .5rem 1rem;
+
+    background-color: #000000;
+
+    border-radius: 0;
+
+    text-align: center;
+    display: inline-block;
+
+    border-radius: 10px;
+
+    margin-right: 1rem;
+
+    p {
+      margin: 0 !important;
+
+      direction: ltr;
+    }
+  }
+
+  .form_bg {
+
+    background-color: #f6f6f6;
+
+    padding: 60px 60px;
+
+    margin: 2rem 0rem;
+
+
+
+    margin-bottom: 8rem;
+
+    label {
+      font-size: 16px;
+    }
+
+    .title {
+      margin-bottom: 2rem;
+
+      font-size: 18px;
+    }
+
+
+    .btn {
+      margin-top: 2rem;
+    }
+  }
+}
+
+
+
+/**************************range ***************************/
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #ddd;
+  /* Default track color */
+  outline: none;
+  margin: 0px 0;
+  /* Adjust as needed */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 9px;
+  border-radius: 5px;
+  background: #ddd;
+  /* Default track color */
+}
+
+/* Styling the thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #cba56e;
+
+  margin-top: -.2rem;
+  cursor: pointer;
+
+}
+
+
+/**************************range ***************************/
+
+
+
+
+
+/********************* finance calc  page *******************/
+
+
+
+/***********************  join_our_team ************************/
+
+
+.join_our_team {
+
+  padding: 30px 100px;
+
+
+  height: 100vh;
+
+  width: 100%;
+
+  @include breakPoint(600px) {
+    padding: 0px 40px 30px 20px;
+    gap: 2rem;
+    height: unset;
+
+  }
+
+  img {
+
+
+    width: 300px;
+    height: 300px;
+
+    @include breakPoint(600px) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .title {
+    font-size: 28px;
+    font-family: "Saudi Regular";
+    position: relative;
+
+    text-align: center;
+
+    font-weight: 500;
+
+    &::before {
+      content: " ";
+      width: 6px;
+      height: 22px;
+      background-color: #bf984c;
+      position: absolute;
+      right: -10px;
+      top: 4px;
+
+      font-weight: 600;
+    }
+
+
+  }
+
+  .text_con {
+
+    @include flex(column);
+    gap: 1rem;
+
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-top: 2rem;
+
+
+    p {
+
+      font-size: 17px;
+      font-family: "Saudi Regular";
+
+      max-width: 90%;
+
+      color: #949494;
+      text-align: right;
+
+      line-height: 1.8rem;
+
+      margin-bottom: 0;
+
+
+    }
+
+
+    a {
+      text-decoration: none;
+    }
+
+    h5 {
+      font-size: 19px;
+      font-family: "Saudi Regular";
+      color: #ad8436;
+    }
+  }
+
+
+
+
+
+
+}
+
+
+/***********************  join_our_team ************************/
+
+
+
+
+/************************  news  ****************************/
+
+.news_section {
+
+
+
+  .news_con {
+
+
+
+    padding: 30px 0px;
+
+
+
+    padding-right: 100px;
+
+    max-width: 94%;
+    margin-bottom: 6rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+
+
+    @include breakPoint(600px) {
+      padding: 0px 20px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    // gap: 2rem;
+
+
+    grid-row-gap: 3.5rem;
+    grid-column-gap: 4.5rem;
+
+
+
+
+
+    .news_card {
+
+      width: auto;
+      // height: 391px;
+      background-color: #f8f8f8;
+
+
+
+      img {
+        width: 100%;
+      }
+
+
+      .date {
+
+
+        color: #bc964f;
+
+
+        font-family: "Poppins";
+
+        font-size: 15px;
+        padding: 0rem .5rem;
+
+        margin: 1rem 0rem;
+
+        display: block;
+      }
+
+      p {
+        color: #000000;
+
+        font-family: "Saudi Regular";
+        font-size: 15px;
+        padding: 0rem .5rem;
+      }
+
+
+    }
+
+    .link {
+
+
+
+      @include flex(row);
+
+      text-decoration: none;
+
+      justify-content: flex-end;
+
+
+      span {
+
+        width: 100px;
+        height: 30px;
+        font-family: 'Saudi Regular';
+        text-align: center;
+
+        font-size: 15px;
+
+        padding: 0.3rem;
+
+        background-color: #bf984c;
+
+        color: #fff !important;
+        margin-left: .5rem;
+
+
+
+        display: block;
+      }
+
+
+      .arrow_left {
+        background-color: #bf984c;
+
+
+        font-size: 18px;
+        color: #fff !important;
+
+        padding: .4rem;
+      }
+    }
+
+
+  }
+
+
+
+
+  .pagination {
+
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    gap: 1rem;
+
+    a {
+      width: 40px;
+      height: 40px;
+      display: block;
+
+      background-color: #eeeeee;
+      text-align: center;
+      padding: .5rem 0rem;
+
+      color: #000 !important;
+
+      font-weight: bold;
+
+      text-decoration: none;
+
+
+      &:hover {
+
+        background-color: #bf984c;
+        color: #fff !important;
+      }
+
+
+
+
+    }
+  }
+
+
+
+}
+
+
+/************************ sub  news *************************/
+
+.sub_news {
+
+
+
+  padding: 30px 100px;
+
+
+
+  @include breakPoint(600px) {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .news_card {
+
+
+
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+
+
+    width: 95%;
+
+    img {
+
+      width: 100%;
+      height: 350px;
+
+      @include breakPoint(600px) {
+
+        height: auto;
+      }
+
+    }
+
+    .date {
+
+
+      color: #bc964f;
+
+
+      font-family: "Poppins";
+
+      font-size: 18px;
+      padding: 0rem .5rem;
+
+      margin: 1rem 0rem;
+
+      display: block;
+    }
+
+
+    .news_title {
+      font-family: 'Saudi Regular';
+
+      color: #000;
+
+      font-size: 16px;
+      margin-bottom: 1rem;
+    }
+
+    p {
+
+
+      color: #6e6e6e;
+      font-size: 14px;
+
+      font-family: 'Saudi Regular';
+
+      line-height: 28px;
+
+    }
+  }
+
+
+
+
+
+
+
+  .another_news_card {
+
+
+    .news_sc_title {
+
+
+      font-family: 'Saudi Regular';
+
+      color: #000;
+
+      font-size: 20px;
+
+    }
+
+    .card_con {
+      @include flex(column);
+
+
+      gap: 1rem;
+
+      margin-top: 1rem;
+
+      .sub_news_card {
+
+        @include flex(row);
+        gap: .5rem;
+
+        max-height: 150px;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        @include breakPoint(600px) {
+
+          flex-direction: column;
+          max-height: unset;
+        }
+
+        img {
+          width: 200px;
+          height: 110px;
+        }
+
+
+        .link {
+
+
+
+          @include flex(row);
+
+          text-decoration: none;
+
+          justify-content: flex-start;
+
+          span {
+
+            width: 100px;
+            height: 30px;
+            font-family: 'Saudi Regular';
+            text-align: center;
+
+            font-size: 14px;
+
+            padding: 0.3rem;
+
+            background-color: #bf984c;
+
+            color: #fff !important;
+            margin-left: .5rem;
+
+
+
+            display: block;
+          }
+
+
+          .arrow_left {
+            background-color: #bf984c;
+
+
+            font-size: 14px;
+            color: #fff !important;
+
+            padding: .4rem;
+          }
+        }
+
+
+
+        p {
+
+          font-family: 'Saudi Regular';
+
+          font-size: 12px;
+          color: #000;
+        }
+
+      }
+
+
+    }
+
+
+  }
+
+}
+
+/************************  sub news   **********************/
+
+
+
+
+/********************* contact us *************************/
+
+.contact_us {
+  // padding: 30px 100px;
+
+
+  @include flex(column);
+
+  justify-content: flex-start;
+  gap: 2rem;
+
+  .form_warpper {
+
+    width: 80vw;
+
+
+
+    @include customRange(1400px, 1600px) {
+
+      width: 70vw;
+
+    }
+
+    .row {
+      @include flex(row);
+
+
+      width: 100%;
+
+      gap: 1rem;
+
+
+
+    }
+
+    .input_con {
+      width: 100%;
+
+      @include flex(row);
+      justify-content: space-between;
+
+      @include breakPoint(600px) {
+
+
+        flex-direction: column
+      }
+
+    }
+
+    form {
+
+      @include flex(row);
+      width: 100%;
+
+
+
+
+      .form-control {
+
+        width: 320px;
+
+
+        height: 50px;
+
+        border: 1px solid #d9d9d9;
+
+        border-radius: 0 !important;
+
+        padding: .8rem .5rem;
+
+        @include breakPoint(600px) {
+          width: 220px;
+        }
+
+        @include customRange(1400px, 1600px) {
+
+          width: 340px;
+        }
+
+
+
+
+        &::placeholder {
+
+          color: #cecece;
+          font-size: 14px;
+
+          font-family: 'Saudi Regular';
+          text-align: right;
+
+
+        }
+
+      }
+
+
+      .text_area {
+
+
+
+        border-radius: 0 !important;
+        padding: 1.375rem 0.75rem !important;
+        border: 1px solid #d9d9d9;
+
+        width: 100%;
+        height: 180px;
+
+        text-decoration: none;
+        resize: none;
+
+        &::placeholder {
+
+
+          font-size: 14px;
+
+          font-family: 'Saudi Regular';
+          color: #cecece;
+
+        }
+
+        @include breakPoint(600px) {
+          width: 220px;
+        }
+
+      }
+
+      .btn {
+
+        width: 300px;
+      }
+
+    }
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+  .our_branches {
+    width: 100%;
+    background-image: url("../img/contactUsBg.png");
+    min-height: 600px;
+    height: fit-content;
+
+
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    padding: 150px 90px;
+    margin: 0;
+    right: -82px;
+    @include flex(row);
+    z-index: -1;
+
+    &::after {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      opacity: 0.859;
+      background-color: #0d0d0f;
+      z-index: 1;
+    }
+
+
+    .title {
+
+      color: #ffff;
+      position: absolute;
+      top: 70px;
+      z-index: 55;
+      text-align: right;
+      width: 100%;
+      right: 200px;
+      font-family: 'Tajawal', sans-serif;
+      font-size: 30px;
+
+      @include breakPoint(600px) {
+
+        width: unset;
+      }
+    }
+
+    .box_con {
+      height: 100%;
+      width: 80%;
+      padding-right: 100px;
+      @include grid(5);
+      grid-template-columns: repeat(5, 207px);
+      gap: 0;
+      height: fit-content;
+
+
+      @include breakPoint(600px) {
+
+
+        grid-template-columns: repeat(1, 207px);
+
+
+      }
+
+      .box {
+
+        width: 207px;
+        height: 171px;
+        z-index: 2;
+
+        &:nth-child(odd) {
+          background-color: rgba(22, 22, 22, 0.522);
+          @include flex(column);
+          gap: .5rem;
+
+
+          span {
+            @include flex(row);
+            width: 70%;
+
+
+            color: #ffff;
+
+
+            justify-content: flex-start;
+
+            gap: 0.5rem;
+            color: white;
+            position: relative;
+
+            z-index: 100;
+            opacity: 1;
+
+
+
+            p {
+              margin-bottom: 0;
+
+              opacity: 1 !important;
+              font-family: 'Tajawal', sans-serif;
+              font-size: 14px;
+            }
+
+            img {
+              width: 23px;
+              height: 23px;
+
+
+              opacity: 1 !important;
+            }
+
+
+          }
+        }
+
+        &:nth-child(even) {
+          background-color: rgba(185, 147, 77, 0.522);
+          @include flex(column);
+
+          gap: 1rem;
+          font-size: 14px;
+          color: #ffff;
+          text-align: center;
+
+
+          text-transform: capitalize;
+
+          .social {
+            @include grid(2);
+            gap: .5rem;
+
+            span {
+              font-family: 'Tajawal', sans-serif;
+
+              font-size: 14px;
+              text-align: center;
+            }
+
+            img {
+              width: 23px;
+              height: 23px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+
+}
+
+/***************** contact us  ****************************/
+
+
+
+
+
+/********************* store *******************************/
+
+
+.store {
+
+
+  padding: 0px 100px 30px 0px;
+
+
+  width: 94%;
+
+  // height: 100%;
+
+  .form_bg {
+
+    background-color: #f6f6f6;
+
+    padding: 60px 30px;
+
+    margin: 1rem 0rem;
+
+
+    border-radius: 10px;
+
+
+    width: 100%;
+
+    // margin-bottom: 8rem;
+
+    .select_con {
+      @include grid(5);
+
+      width: 100%;
+
+      gap: .5rem !important;
+
+    }
+
+    label {
+      font-size: 16px;
+
+      font-family: 'Saudi Regular';
+
+      color: #000000;
+
+      font-weight: 500;
+    }
+
+    .title {
+      margin-bottom: 2rem;
+
+      font-size: 18px;
+    }
+
+
+    .btn {
+      margin-top: 2rem;
+    }
+
+    .select {
+
+      width: 210px;
+    }
+  }
+
+
+  .slider_text {
+
+    margin-bottom: 5rem;
+
+    margin-top: 2rem;
+
+
+
+    height: fit-content;
+
+
+
+    .slider-for {
+
+      width: 100%;
+      direction: ltr;
+
+      margin-bottom: 0rem;
+
+
+
+      li {
+
+
+        height: 100%;
+        width: 100%;
+        ;
+
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+
+
+
+
+        img {
+          width: 400px;
+
+
+        }
+
+      }
+
+      .slick-slider,
+      .slick-track {
+        height: 450px;
+
+
+        @include flex(row);
+
+
+      }
+
+      .slick-list {
+        border: 1px solid #a9a9a9;
+
+        border-radius: 11px;
+        background-color: #ffffff;
+        border: 0.6859999999999999px solid #e1e1e1;
+      }
+
+
+    }
+
+    .slider-nav {
+
+      width: 100%;
+
+      display: flex;
+
+
+
+      margin-bottom: 4rem;
+
+      height: 200px;
+
+      .slide {
+        width: 150px !important;
+        display: block !important;
+        height: 100px;
+        margin: 10px;
+      }
+
+
+
+      img {
+        width: 200px;
+
+        width: 100%;
+        height: 140px;
+        // object-fit: cover;
+        border: 1px solid #a9a9a9;
+        padding: 10px;
+        // object-fit: cover;
+
+        object-fit: contain;
+
+
+        border-radius: 10px;
+        background-color: #ffffff;
+        border: 0.6859999999999999px solid #e1e1e1;
+
+      }
+
+
+
+
+    }
+
+
+    .text {
+
+
+      @include flex (column);
+
+
+      gap: .5rem;
+
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .title {
+
+        font-family: 'Tajawal', sans-serif;
+        color: #010101;
+
+        font-weight: 500;
+        font-size: 26px;
+      }
+
+      .price,
+      .discount {
+
+        font-family: 'Tajawal', sans-serif;
+        color: #010101;
+
+        font-weight: 500;
+        font-size: 20px;
+      }
+
+      .discount {
+        text-decoration: line-through;
+      }
+
+      .discount_con {
+        @include flex(row);
+        gap: .5rem;
+
+        .afterDiscount {
+
+          font-family: 'Tajawal', sans-serif;
+          color: red;
+
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+
+
+      .label_value {
+
+
+        .label {
+          font-size: 18px;
+
+          font-family: 'Tajawal', sans-serif;
+
+          color: #bf984c;
+
+          margin-bottom: .5rem;
+
+
+        }
+
+
+        h5 {
+
+
+          font-size: 17px;
+
+          font-family: 'Tajawal', sans-serif;
+
+          color: #010101;
+
+          margin-bottom: .5rem;
+
+          font-weight: 600;
+
+        }
+
+
+
+      }
+
+
+
+
+      a {
+
+        font-family: 'Tajawal', sans-serif;
+
+        text-decoration: underline;
+
+
+        color: #2386c5 !important;
+
+        font-size: 15px;
+        font-family: 'Saudi Regular';
+
+      }
+
+
+      .btn_number {
+
+
+        width: 180px;
+
+        border: none;
+
+        padding: .8rem;
+
+        height: 40px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+        background: #ffff;
+
+        font-size: 15px;
+
+        margin-top: .5rem;
+      }
+
+
+
+
+      .btn {
+
+        color: #ffff !important;
+        text-decoration: none;
+
+        width: 180px;
+        margin-top: .5rem;
+        height: 40px;
+      }
+
+    }
+
+
+
+
+
+
+
+
+
+  }
+
+
+
+
+
+}
+
+/********************* store *******************************/
+
+
+
+
+
+
+
+
+
+
+
+
+/********************* store details **************************/
+
+
+.store_details {
+
+
+  padding: 30px 100px;
+
+  @include flex (row);
+  margin-bottom: 9rem;
+
+
+  justify-content: flex-start;
+
+
+  align-items: flex-start;
+
+
+  gap: 4rem;
+
+  @include breakPoint(600px) {
+
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .car_details {
+
+    background-color: #f8f8f8;
+    border-radius: 11px;
+    padding: 20px;
+
+    width: 600px;
+
+    @include breakPoint(600px) {
+      width: 100%;
+    }
+
+    .title {
+
+      font-size: 18px;
+      color: #bf984c;
+
+      font-family: 'Saudi Regular';
+      margin-bottom: .5rem;
+    }
+
+    h4 {
+
+      font-family: 'Tajawal', sans-serif;
+
+      font-weight: 500;
+
+      font-size: 30px;
+      color: #010101;
+
+      text-transform: capitalize;
+
+      margin-bottom: 2rem
+    }
+  }
+
+  .label_value {
+
+    @include flex(row);
+
+    justify-content: flex-start;
+
+    text-align: center;
+    gap: .4rem;
+
+    label {
+
+      font-family: 'Tajawal', sans-serif;
+
+      font-size: 20px;
+
+      font-weight: 500;
+
+      color: #bf984c;
+    }
+
+    p {
+
+
+      color: #010101;
+      font-weight: 600;
+
+      font-family: 'Tajawal', sans-serif;
+
+      margin-bottom: .5rem;
+
+      font-size: 20px;
+    }
+
+
+
+
+  }
+
+
+
+  h4 {
+    font-size: 19px;
+    color: #000000;
+    font-family: 'Saudi Regular';
+
+    text-align: right;
+
+    margin-bottom: 2rem;
+
+
+    font-weight: 500;
+
+
+  }
+
+
+  input {
+    text-align: right;
+
+    margin-bottom: .5rem;
+
+    border-radius: 0;
+    border: 3px solid #c3c3c3;
+    font-family: 'Saudi Regular';
+
+    font-size: 15px;
+    color: #b6b6b6;
+
+
+    height: 50px;
+    width: 450px;
+    outline: none !important;
+
+    @include breakPoint(600px) {
+      width: 100%;
+    }
+
+    &:focus {
+
+      border: 3px solid #bf984c;
+      outline: none !important;
+
+    }
+
+
+
+
+
+
+
+
+
+
+  }
+
+  .btn {
+    width: 100%;
+    color: #ffff;
+
+    text-align: center;
+
+    width: 450px;
+    margin-top: 1rem;
+
+    font-size: 19px;
+
+    @include breakPoint(600px) {
+      width: 100%;
+    }
+  }
+
+
+
+
+
+
+
+
+  /********************* store details **************************/
+
+}
+
+/********************* store details **************************/

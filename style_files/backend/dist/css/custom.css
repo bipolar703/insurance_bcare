@@ -1,0 +1,65 @@
+/* Layth Al-Dwairi (L.R.A) */
+.custom_select_style {
+    height: 60px;
+}
+/* Raghad ALKarasneh */
+.disabled-link {
+    color: gray; /* Set the text color to gray or any other color you prefer */
+    pointer-events: none; /* Prevents mouse interactions, making the link non-clickable */
+    text-decoration: none; /* Optionally remove underline */
+    cursor: not-allowed; /* Display a "not-allowed" cursor to indicate it's disabled */
+}
+
+
+.logo-image {
+    border: 2px solid #3498db; /* Add a border with the color of your choice */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+    margin-left: 30px; /* Adjust the margin to move the image to the right */
+}
+
+.logo-image:hover {
+    transform: scale(1.1); /* Enlarge the image on hover */
+}
+
+
+.logo-text {
+    color: #ffffff; /* Set the text color to white */
+    font-weight: bold; /* Make the text bold */
+    transition: color 0.3s ease-in-out; /* Add a smooth color transition effect */
+    margin-left: 5px; /* Add a margin to the left for spacing */
+}
+
+.logo-text:hover {
+    color: #f0f0f0; /* Change the text color on hover */
+    /* transform: scale(1.1); */
+}
+
+.groove-container {
+    border: 2px solid #3498db; /* Border color */
+    border-radius: 8px; /* Border radius for rounded corners */
+    padding: 15px; /* Padding inside the container */
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5); /* Subtle shadow effect */
+}
+
+
+.sidebar-item {
+    position: relative;
+}
+
+.sidebar-item .submenu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    z-index: 999;
+}
+
+.sidebar-item:hover .submenu {
+    display: block;
+}
+

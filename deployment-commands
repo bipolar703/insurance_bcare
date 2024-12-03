@@ -1,0 +1,29 @@
+# Create necessary directories
+mkdir -p public_html/project
+
+# Move to project directory
+cd public_html/project
+
+# Clone/Upload your Laravel project
+git clone <your-repository> . # If using git
+# OR use SFTP/SCP for direct file transfer
+
+# Set proper permissions
+find . -type f -exec chmod 644 {} \;
+find . -type d -exec chmod 755 {} \;
+chmod -R 775 storage bootstrap/cache
+
+# Install dependencies
+composer install --no-dev --optimize-autoloader
+
+# Generate app key if needed
+php artisan key:generate
+
+# Run migrations (if needed)
+php artisan migrate --force
+
+# Clear caches
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+php artisan route:clear
