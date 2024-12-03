@@ -1,0 +1,25 @@
+name: Hostinger Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Hostinger Deploy
+      uses: mradilla/hostinger-deploy@v1
+      with:
+        # Replace these values with your actual details
+        source-path: ./build  # e.g., ./dist or ./build
+        domain: https://taminattcom.pro/ # Your domain
+        host: 145.223.85.200  # Your Hostinger VPS IP address
+        port: 22  # Default SSH port
+        username: u116650566  # Your SSH username
+        password: Reeree12.R.  # Your SSH password
