@@ -4,57 +4,37 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: tammin_app
-    restart: unless-stopped
-    working_dir: /var/www/
-    volumes:
-      - ./:/var/www
-      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
-    networks:
-      - tammin_network
-    depends_on:
-      - db
-
-  db:
-    image: mysql:8.0
-    container_name: tammin_db
+    container_name: bcare-app
     restart: unless-stopped
     environment:
-      MYSQL_DATABASE: ${DB_DATABASE}
-      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
-      MYSQL_USER: ${DB_USERNAME}
+      - APP_ENV=production
+      - APP_URL=https://taminattcom.pro
+      - DB_HOST=127.0.0.1
+      - DB_DATABASE=u116650566_bcare
+      - DB_USERNAME=u116650566_bcare
+      - DB_PASSWORD=Reeree12.R.
     volumes:
-      - dbdata:/var/lib/mysql/
-      - ./mysql/my.cnf:/etc/mysql/my.cnf
-    ports:
-      - "3306:3306"
+      - ./:/var/www
+      - ./storage:/var/www/storage
+      - ./bootstrap/cache:/var/www/bootstrap/cache
     networks:
-      - tammin_network
+      - bcare-network
 
-  nginx:
+  webserver:
     image: nginx:alpine
-    container_name: tammin_nginx
+    container_name: bcare-nginx
     restart: unless-stopped
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - ./:/var/www
-      - ./nginx/conf.d/:/etc/nginx/conf.d/
-      - ./nginx/ssl/:/etc/nginx/ssl/
-      - /etc/letsencrypt:/etc/letsencrypt:ro
-      - /var/lib/letsencrypt:/var/lib/letsencrypt
-      - ./nginx/logs:/var/log/nginx
-    networks:
-      - tammin_network
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
     depends_on:
       - app
+    networks:
+      - bcare-network
 
 networks:
-  tammin_network:
+  bcare-network:
     driver: bridge
-
-volumes:
-  dbdata:
-    driver: local
